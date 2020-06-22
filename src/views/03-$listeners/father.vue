@@ -1,6 +1,7 @@
 <template>
   <div class="f">
       <h4>父组件</h4>
+      <son @pass="pass" />
   </div>
 </template>
 
@@ -8,7 +9,12 @@
 export default {
     components: {
         son: () => import('./son')
-    }
+    },
+    methods: {
+        pass (v) {
+            console.log(v);
+        }
+    },
 }
 </script>
 

@@ -16,6 +16,10 @@ const routes = [
     component: $attrs02
   },
   {
+    path: '/$listeners',
+    component: () => import('../views/03-$listeners/father.vue')
+  },
+  {
     path: '/dongtai',
     component: Dongtai
   },
