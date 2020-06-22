@@ -1,22 +1,27 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// 导入文件
+const $attrs02 = () => import('../views/02-$attrs/father.vue')
+const Dongtai = () => import('../views/04-动态组件/index.vue')
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/texing01',
+    component: () => import('../views/01-特性继承/father.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/$attrs02',
+    component: $attrs02
+  },
+  {
+    path: '/dongtai',
+    component: Dongtai
+  },
+  {
+    path: '/chacao',
+    component: () => import('../views/05-插槽/index.vue')
   }
 ]
 
